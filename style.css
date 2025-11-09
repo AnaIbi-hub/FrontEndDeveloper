@@ -1,10 +1,10 @@
 /* APLIQUEM CSS EN LES PARTS I ELEMENTS GENERALS  */
 body {
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
-  padding: 0 40px; 
-  color: #222;
-  line-height: 1.5;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #fff;
+  color: #111;
 }
 
 
@@ -23,68 +23,100 @@ h2 {
   color: #111;
 }
 
-.menu {
-  background-color: #1e1e1e;   
-  padding: 40px 40px;        
+/* NAVBAR */
+
+nav.menu {
+  width: 1440px; /* Aplico les mides de figma */
+  height: 64px; /* Aplico les mides de figma */
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  margin: 0 auto;
 }
 
-.menu h2 {
-  color: #fff;              
-  margin: 0; 
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.menu ul {
-  list-style: none;
-  margin: 10px 0 0 0;
-  padding-left: 0; 
-}
-
-.menu li {
-  display: inline-block;  
-  margin-right: 28px;     
-}
-
-.menu a {
-  color: #fff;
-  font-weight: 600;
+nav.menu h2 {
+  color: white;
   font-size: 1rem;
+  margin: 0;
 }
 
-.menu a:hover {
-  color: #c09f33;
+nav.menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav.menu li {
+  margin-left: 25px;
+}
+
+nav.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+nav.menu a:hover {
   text-decoration: underline;
 }
+
+/* HEADER */
+header.capsalera {
+  width: 1440px; 
+  /* Nota: S'utilitza width: 1440px per emular exactament les mides de Figma.
+   En una web real, seria més recomanable usar width: 100% amb max-width
+   per tal que el disseny s'adapti a diferents mides de pantalla. */
+  height: 300px; /* Aplico les mides de figma */
+  margin: 0 auto;
+  position: relative;
+}
+
+header.capsalera img {
+  width: 100%;
+  height: 100%;
+}
+
+header.capsalera h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.4rem;
+}
+
 
 
 /* APLIQUEM CSS PER SECCIONS  */
 /* SECCIÓ PRESENTACIÓ  */
 .presentacio {
-  text-align: center;       
-  margin: 40px auto;       
-  width: 80%;                
-  background-color: #f8f8f8; 
+  margin: 40px auto;
+  width: 80%;
+  background-color: #f8f8f8;
   padding: 20px;
   border-radius: 10px;
+  text-align: center; 
 }
 
 .presentacio h2 {
-  color: #222;
-  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 
-.presentacio img {
-  border-radius: 50%;        
-  margin: 15px 0;
+.presentacio-content {
+  display: flex;
+  align-items: flex-start; 
+  gap: 20px;               
+  text-align: left;
 }
 
-.presentacio p {
-  color: #333;
-  line-height: 1.5;
-  font-size: 1rem;
-  text-align: justify;      
+.presentacio-content img {
+  width: 250px;           
+  border-radius: 50%;
+  flex-shrink: 0;         
 }
+
 
 /* SECCIÓ CONEIXEMENTS  */
 
@@ -108,8 +140,9 @@ h2 {
 }
 
 .logos img {
-  width: 25%;          
-  margin: 0 4%;        
+  width: 270px;
+  height: 270px;         
+  margin: 0 50px;        
   vertical-align: middle;
 }
 
@@ -138,7 +171,7 @@ h2 {
 
 /* SECCIÓ PROJECTES  */
 .projectes {
-  text-align: center;          
+  text-align: center;
   background-color: #f8f8f8;
   padding: 30px;
   border-radius: 10px;
@@ -146,47 +179,126 @@ h2 {
   width: 80%;
 }
 
-.projectes div {
-  display: inline-block;        
-  width: 25%;                   
-  margin: 0 3%;               
-  vertical-align: top;          
-  text-align: center;          
+.projectes .projecte {
+  display: inline-block;
+  width: 25%;
+  margin: 0 3%;
+  vertical-align: top;
+  text-align: center;
+  background-color: #000;  
+  color: white;            
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;   
 }
 
-.projectes img {
-  width: 100%;                 
+.projectes .projecte img {
+  width: 100%;             
+  height: 180px;              
   border-radius: 8px;
-  margin-top: 10px;
+  margin-bottom: 10px;    
+}
+
+.projectes .projecte strong {
+  display: block;
+  margin-bottom: 5px;     
+}
+
+.projectes .projecte .boton {
+  display: inline-block;
+  margin-top: 10px;        
+  padding: 5px 10px;
+  background-color: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 /* SECCIÓ AFICCIONS  */
 .aficcions {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  width: 80%;
   margin: 40px auto;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .aficcions h2 {
+  width: 100%;
+  margin-bottom: 16px;
   font-size: 1.8rem;
-  margin-bottom: 20px;
 }
 
-.aficcions div {
-  display: inline-block;
-  width: 20%;
-  margin: 0 2%;
+.aficcions {
+  display: flex;
+  flex-wrap: wrap;                
+  justify-content: space-between; 
+  width: 80%;
+  margin: 40px auto;
   text-align: center;
+  box-sizing: border-box;
 }
+
+.aficcions h2 {
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+}
+
+.aficcions .aficcio {
+  display: flex;
+  align-items: center;            
+  justify-content: space-between; 
+  width: 22%;                     
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.aficcions .aficcio p {
+/* no he aconseguit fer que sortís més al centre, per molt que el forcés */
+  margin: 0;
+  font-weight: 600;
+  padding-left: 20px;              
+}
+
+.aficcions .aficcio img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
 
 
 /* --------- PEU DE PÀGINA --------- */
+  /* Nota: poso el footer en un altre color perquè les fotos que he extret són en negre, i per tant no es veuen amb un footer negre */
 footer {
-  background-color: #222;
+  background-color: #f7f1f1;
   color: #fff;
   padding: 18px 20px;
   text-align: center;
   margin-top: 40px;
 }
+
+footer a {
+  display: inline-block; 
+  margin: 0 8px;           
+}
+
+footer a img {
+  width: 30px;         
+  height: 30px;          
+  object-fit: cover;   
+  vertical-align: middle;
+}
+
+
+
 
 a { color: #0066cc; }
 
